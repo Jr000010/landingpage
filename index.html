@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        #container {
+            height: 100vh;
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            align-items: center;
+            display: flex;
+        }
+        .no-display {
+            display: none;
+        }
+        .half-width {
+            margin: auto;
+            width: 70%;
+            /* display: flex;
+            justify-content: space-between; */
+        }
+        #contacts strong {
+            cursor: pointer;
+        }
+        #more-details {
+            height: 100vh;
+            padding: 0 5%;
+            /* z-index: 2; */
+            color: #ccc7c7;
+        }
+         
+        #more-details div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            }
+        
+        #goBackHome {
+            color: #ccc7c7;
+        }
+        #goBackHome:hover {
+            color: #ffffff;
+        }
+        .overlay-background {
+            background-color: rgba(0, 0, 0, 0.795);
+        }
+        .bodyBackground {
+            /* background-color: rgba(0, 255, 255, 0.556); */
+            background: linear-gradient(cyan, rgba(255, 255, 255, 0)) 0% 0% / 100% 70% no-repeat;
+        }
+        .body2Background {
+            background-color: rgba(0, 0, 0, 0.795);
+        }
+        .footer2 {
+            color: #ccc7c7;
+        }
+
+        #page-title {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+        #page-title.fade-in-title {
+            opacity: 1;
+        }
+
+        #half-width-div {
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        #half-width-div.fade-in-div {
+            opacity: 1;
+        }
+
+        #contacts {
+            opacity: 0;
+            transition: opacity 1.3s ease-in;
+        }
+        #contacts.fade-in-contacts {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body id="body" class="bodyBackground">
+    <div id="container">
+        <div id="hero">
+            <h2 id="page-title">
+                WEBSITE CREATION 
+            </h2>
+            <div>
+                <p id="half-width-div" class="half-width">If you have been thinking about having a website to display or advertise your business or content online, here is how you can reach me. Have an appealing website that will grow your client base through online channels. See more details <strong onclick="displayMoreDetails()">here.</strong> </p>
+            </div>
+            <br><br>
+            <div id="contacts" class="half-width">
+                <strong id="phone-number" style="color: black;">Phone </strong><br><br>
+                <strong id="whatsapp-number" style="color: green;">whatsapp </strong><br><br>
+                <strong id="emailAdress" style="color: blue;">Email </strong>
+            </div>
+
+            <div id="more-details" class="no-display">
+                <div>
+                    <a id="goBackHome" href="">back</a>
+                    <p>
+                        The website I will create for your business is a simple and appealing site that will display it online. There will be information about what products or services you sell, and how you can be contacted. There will also be details about your business location(s), any delivery methods and charges you may have. <br>
+                        Depending on your website's content and complexity, the prices for creating one will range between 4000 and 8000, and will be established during consultation. 
+                    </p>
+                </div> 
+                 
+            </div>
+            
+        </div>
+     </div>
+     <footer id="footer" class="">
+        Jann Adalla
+     </footer>
+     <!-- <div id="overlay" class="no-display"></div> -->
+     <script>
+        function displayMoreDetails() {
+            // document.getElementById('overlay').classList.remove('no-display')
+            document.getElementById('more-details').classList.remove('no-display')
+            document.getElementById('more-details').classList.add('fade-in-details')
+            document.getElementById('contacts').classList.add('no-display')
+            document.getElementById('half-width-div').classList.add('no-display')
+            document.getElementById('body').classList.add('overlay-background')
+            document.getElementById('body').classList.remove('bodyBackground')
+            document.querySelector('footer').style.color = "#fff"
+        }
+        
+        window.addEventListener("load", () =>{
+            document.getElementById('page-title').classList.add('fade-in-title')
+        })
+        window.addEventListener("load", () =>{
+            document.getElementById('half-width-div').classList.add('fade-in-div')
+        })
+        window.addEventListener("load", () =>{
+            document.getElementById('contacts').classList.add('fade-in-contacts')
+        })
+
+        phoneNumber = document.getElementById('phone-number')
+        phoneNumber.addEventListener('click', ()=>{ phoneNumber.textContent = '+254 795 857 572' })
+        
+        whatsappNumber = document.getElementById('whatsapp-number')
+        whatsappNumber.addEventListener('click', ()=>{ whatsappNumber.textContent = '+254 795 857 572' })
+        
+
+        email = document.getElementById('emailAdress')
+        email.addEventListener('click', ()=>{ email.textContent = 'jradalla10@gmail.com' })     
+    </script>
+</body>
+</html>
